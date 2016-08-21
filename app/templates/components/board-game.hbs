@@ -1,0 +1,5 @@
+<div class="section-content {{sizeClass}}">
+  {{#each (shuffle model) as |c|}}
+    {{card-single card=c flipped="flip"}}
+  {{/each}}
+</div>

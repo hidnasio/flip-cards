@@ -1,7 +1,10 @@
 import Ember from 'ember';
 
-export default Ember.Controller.extend({
+export default Ember.Component.extend({
   previous: null,
+  sizeClass: Ember.computed('size', function(){
+    return `s${this.get('size')}`;
+  }),
   actions: {
     flip(card) {
 
