@@ -1,0 +1,11 @@
+<div class="section-content six-by-six">
+  {{#each (shuffle model) as |card|}}
+    <div class="card effect-click {{if card.isFlipped 'flipped'}}" {{action "flip" card}}>
+      <div class="card-front">
+      </div>
+      <div class="card-back">
+        <img src="/images/{{card.back}}" />
+      </div>
+    </div>
+  {{/each}}
+</div>

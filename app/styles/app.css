@@ -1,23 +1,55 @@
 * {
   box-sizing: border-box;
 }
+
+body {
+background:
+linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+background-color: #131313;
+background-size: 20px 20px;
+}
+
 .section-content {
   display: flex;
   flex-flow:row wrap;
   justify-content: space-around;
-  flex-basis: 25%;
-  max-width: 850px;
+}
+
+.section-content.four-by-four {
+  width: 760px;
+  margin: 40px auto;
+}
+
+.section-content.six-by-six {
+  width: 760px;
+  margin: 40px auto;
+}
+
+.section-content.four-by-four .card {
+  height: 180px;
+  max-width: 180px;
+  margin: 5px;
+}
+
+.section-content.six-by-six .card {
+  height: 116px;
+  max-width: 116px;
+  margin: 5px;
 }
 
 .card {
   flex: 1 1 auto;
-  flex-basis: 25%;
+  flex-basis: 80%;
   position: relative;
-  padding-bottom: 25%;
-  height: 200px;
-  max-width: 200px;
   text-align: center;
-  margin: 5px;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .card-front,
@@ -32,6 +64,10 @@
   -webkit-box-shadow: 4px 2px 15px -3px rgba(0,0,0,0.75);
   -moz-box-shadow: 4px 2px 15px -3px rgba(0,0,0,0.75);
   box-shadow: 4px 2px 15px -3px rgba(0,0,0,0.75);
+
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .card-front,
@@ -61,15 +97,19 @@
 }
 
 .card-back {
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAANklEQVQYlWP4/v37fwYk8P379//YxBhwCWBI4pMgaBJWk7EpwqqYaIVEW02SZ3B5Cq8uXAEOAC9KjBH29562AAAAAElFTkSuQmCC);
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAPElEQVQYlZWQMQ4AMAgC+f9z+QAd2+gN1MnABSOynXdshzRNgfYkF5zG1ERJlCyCCO7B+vTXM2SsetrCD7ymiQS9kFBFAAAAAElFTkSuQmCC);
   -webkit-transform: rotateY(-180deg);
           transform: rotateY(-180deg);
   border: 3px solid #efefef;
 }
 
 .card-back img {
-  width: 190px;
-  margin: 5px;
+  margin: 5%;
+  width: 90%;
+
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .card.effect-click.flipped .card-front {

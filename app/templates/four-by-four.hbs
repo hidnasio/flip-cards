@@ -1,5 +1,5 @@
-<div class="section-content">
-  {{#each model as |card|}}
+<div class="section-content four-by-four">
+  {{#each (shuffle model) as |card|}}
     <div class="card effect-click {{if card.isFlipped 'flipped'}}" {{action "flip" card}}>
       <div class="card-front">
       </div>

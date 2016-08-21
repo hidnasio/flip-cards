@@ -4,10 +4,11 @@ export default Ember.Controller.extend({
   previous: null,
   actions: {
     flip(card) {
+
       let previous = this.get('previous');
 
       // current card already flipped -> do nothing
-      if(card.isFlipped) {
+      if(card.get('isFlipped')) {
         return false;
       }
 
@@ -19,7 +20,7 @@ export default Ember.Controller.extend({
       }
 
       // previous card and current card different -> flip previous and show current
-      if(previous.value !== card.value) {
+      if(previous.get('value') !== card.get('value')) {
         this.set('previous', null);
         Ember.set(card, 'isFlipped', true);
 
@@ -31,7 +32,7 @@ export default Ember.Controller.extend({
       }
 
       // previous card and current card equals -> flip current
-      if(previous.value === card.value) {
+      if(previous.get('value') === card.get('value')) {
         Ember.set(card, 'isFlipped', true);
         this.set('previous', null);
         return false;

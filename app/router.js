@@ -7,7 +7,8 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('flip-cards');
+  this.route('four-by-four');
+  this.route('six-by-six');
 });
 
 export default Router;
