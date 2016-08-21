@@ -7,6 +7,7 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.mount('telling-stories');
   this.route('four-by-four');
   this.route('six-by-six');
 });

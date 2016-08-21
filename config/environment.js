@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'flip-cards-telling-stories-example',
+    modulePrefix: 'flip-cards',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',

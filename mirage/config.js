@@ -1,4 +1,5 @@
 export default function() {
+  this.passthrough('/telling-stories/acceptance.json');
   this.namespace = 'api';
 
   this.get('/cards', (schema, request) => {

@@ -31,8 +31,10 @@ export default Ember.Component.extend({
         Ember.set(card, 'animation', 'show');
 
         setTimeout(function() {
-          Ember.set(card, 'animation', 'hide');
-          Ember.set(previous, 'animation', 'hide');
+          Ember.run(function(){
+            Ember.set(card, 'animation', 'hide');
+            Ember.set(previous, 'animation', 'hide');
+          });
         }, 800);
         return false;
       }
