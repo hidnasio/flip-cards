@@ -74,8 +74,6 @@ body {
 .card-back {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  -webkit-transition: -webkit-transform 0.3s;
-          transition: transform 0.3s;
 }
 
 .card-front {
@@ -98,8 +96,8 @@ body {
 
 .card-back {
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAPElEQVQYlZWQMQ4AMAgC+f9z+QAd2+gN1MnABSOynXdshzRNgfYkF5zG1ERJlCyCCO7B+vTXM2SsetrCD7ymiQS9kFBFAAAAAElFTkSuQmCC);
-  -webkit-transform: rotateY(-180deg);
-          transform: rotateY(-180deg);
+  -webkit-transform: rotatey(-180deg);
+          transform: rotatey(-180deg);
   border: 3px solid #efefef;
 }
 
@@ -112,12 +110,37 @@ body {
   user-select: none;
 }
 
-.card.effect-click.flipped .card-front {
-  -webkit-transform: rotateY(-180deg);
-          transform: rotateY(-180deg);
+.card.effect-click.show .card-back,
+.card.effect-click.show .card-front,
+.card.effect-click.hide .card-back,
+.card.effect-click.hide .card-front {
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
 }
 
-.card.effect-click.flipped .card-back {
-  -webkit-transform: rotateY(0);
-          transform: rotateY(0);
+.card.effect-click.show .card-back {
+  animation-name: show;
 }
+
+.card.effect-click.show .card-front {
+  animation-name: hide;
+}
+
+.card.effect-click.hide .card-back {
+  animation-name: hide;
+}
+
+.card.effect-click.hide .card-front {
+  animation-name: show;
+}
+
+@keyframes show {
+    0%    { -webkit-transform: rotatey(-180deg); transform: rotatey(-180deg); }
+    100%  { -webkit-transform: rotatey(0); transform: rotatey(0); }
+}
+
+@keyframes hide {
+    0%    { -webkit-transform: rotatey(0); transform: rotatey(0); }
+    100%  { -webkit-transform: rotatey(-180deg); transform: rotatey(-180deg); }
+}
+

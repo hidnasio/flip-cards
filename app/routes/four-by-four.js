@@ -10,7 +10,8 @@ export default Ember.Route.extend({
 
         return Ember.ObjectProxy.create({
           content: model,
-          isFlipped: false
+          isFlipped: false,
+          animation: ''
         });
       }
     });
