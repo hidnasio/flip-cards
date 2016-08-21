@@ -5,8 +5,14 @@ export default Ember.Component.extend({
   sizeClass: Ember.computed('size', function(){
     return `s${this.get('size')}`;
   }),
+  canIPlay: true,
   actions: {
     flip(card) {
+
+      // TODO: get rid of the setTimeout
+      if(!this.get('canIPlay')) {
+        return false;
+      }
 
       let previous = this.get('previous');
 
@@ -29,11 +35,14 @@ export default Ember.Component.extend({
         this.set('previous', null);
         Ember.set(previous, 'isFlipped', false);
         Ember.set(card, 'animation', 'show');
+        this.set('canIPlay', false);
+        let component = this;
 
         setTimeout(function() {
           Ember.run(function(){
             Ember.set(card, 'animation', 'hide');
             Ember.set(previous, 'animation', 'hide');
+            component.set('canIPlay', true);
           });
         }, 800);
         return false;
