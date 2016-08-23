@@ -42,6 +42,7 @@
     "ember-load-initializers": "^0.5.1",
     "ember-resolver": "^2.0.3",
     "loader.js": "^4.0.1",
-    "telling-stories": "git://github.com/mvdwg/telling-stories.git"
+    "telling-stories": "git://github.com/mvdwg/telling-stories.git#126b23728525f92b8939ec0c74ff10fde45b9c5f",
+    "telling-stories-dashboard": "git://github.com/mvdwg/telling-stories-dashboard.git#d6546be1cb9b0a6e7a51adeecc9b9afb0b473820"
   }
 }

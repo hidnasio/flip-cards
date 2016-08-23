@@ -1,5 +1,5 @@
 export default function() {
-  this.passthrough('/telling-stories/acceptance.json');
+  this.passthrough('/telling-stories.json');
 
   this.namespace = '/api';
 
@@ -7,8 +7,9 @@ export default function() {
 
     let type = 'bird';
 
-    if(request.queryParams.type)
+    if(request.queryParams.type) {
       type = request.queryParams.type;
+    }
 
     let cards = schema.cards.where({ type: type });
 

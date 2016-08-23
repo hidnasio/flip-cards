@@ -5,11 +5,11 @@ export default Factory.extend({
     return '';
   },
 
-  back(i) {
+  back() {
     return `${this.type}${this.index}.png`;
   },
 
-  value(i) {
+  value() {
     return `${this.type}${this.index}`;
   },
 

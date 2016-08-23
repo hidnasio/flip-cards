@@ -4,14 +4,6 @@ import page from 'flip-cards/tests/pages/four-by-four';
 
 moduleForAcceptance('Acceptance | four by four test');
 
-test('visiting /four-by-four', function(assert) {
-  page.visit();
-
-  andThen(function() {
-    assert.equal(page.cards().count, 16);
-  });
-});
-
 function tryCard(page) {
   return wait().then(function(){
     if(page.unselectedCards().count <= 0) {
@@ -25,9 +17,23 @@ function tryCard(page) {
   });
 }
 
-test('click on card', function(assert) {
-  server.createList('card', 16);
+test('Play with birds', function(assert) {
+  server.createList('card', 8, { type: 'bird', numberOfImages: 18 });
   page.visit();
+  tryCard(page);
+  assert.ok(true);
+});
+
+test('Play with dogs', function(assert) {
+  server.createList('card', 18, { type: 'dog', numberOfImages: 18 });
+  visit('/six-by-six');
+  tryCard(page);
+  assert.ok(true);
+});
+
+test('Play with Tomster', function(assert) {
+  server.createList('card', 32, { type: 'tomster', numberOfImages: 18 });
+  visit('/eight-by-eight');
   tryCard(page);
   assert.ok(true);
 });
