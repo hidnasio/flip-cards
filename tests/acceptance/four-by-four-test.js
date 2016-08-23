@@ -26,6 +26,7 @@ function tryCard(page) {
 }
 
 test('click on card', function(assert) {
+  server.createList('card', 16);
   page.visit();
   tryCard(page);
   assert.ok(true);

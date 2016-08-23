@@ -27,7 +27,12 @@ body {
 
 .section-content.s6 {
   width: 760px;
-  margin: 40px auto 0;
+  margin: 10px auto 0;
+}
+
+.section-content.s8 {
+  width: 880px;
+  margin: 10px auto 0;
 }
 
 .section-content.s4 .card {
@@ -39,6 +44,12 @@ body {
 .section-content.s6 .card {
   height: 116px;
   max-width: 116px;
+  margin: 5px;
+}
+
+.section-content.s8 .card {
+  height: 100px;
+  max-width: 100px;
   margin: 5px;
 }
 

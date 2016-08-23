@@ -10,6 +10,7 @@ Router.map(function() {
   this.mount('telling-stories');
   this.route('four-by-four');
   this.route('six-by-six');
+  this.route('eight-by-eight');
 });
 
 export default Router;
