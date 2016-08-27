@@ -25,14 +25,14 @@ test('Play with birds', function(assert) {
 });
 
 test('Play with dogs', function(assert) {
-  server.createList('card', 18, { type: 'dog', numberOfImages: 18 });
+  server.createList('card', 18, { type: 'dog', numberOfImages: 32 });
   visit('/six-by-six');
   tryCard(page);
   assert.ok(true);
 });
 
 test('Play with Tomster', function(assert) {
-  server.createList('card', 32, { type: 'tomster', numberOfImages: 18 });
+  server.createList('card', 40, { type: 'tomster', numberOfImages: 40 });
   visit('/eight-by-eight');
   tryCard(page);
   assert.ok(true);

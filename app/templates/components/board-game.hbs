@@ -1,5 +1,14 @@
-<div class="section-content {{sizeClass}}">
-  {{#each (shuffle model) as |c|}}
-    {{card-single card=c flipped="flip"}}
-  {{/each}}
+<div class="container">
+  <div class="board">
+    <div class="menu">
+      {{#link-to 'four-by-four'}} 4 x 4 {{/link-to}}
+      {{#link-to 'six-by-six'}} 6 x 6 {{/link-to}}
+      {{#link-to 'eight-by-eight'}} 8 x 8 {{/link-to}}
+    </div>
+    <div class="section-content {{sizeClass}}">
+      {{#each (shuffle model) as |c|}}
+        {{card-single card=c flipped="flip"}}
+      {{/each}}
+    </div>
+  </div>
 </div>
